@@ -15,7 +15,7 @@ client.commands = new Collection();
 client.slashCommands = new Collection();
 client.config = require("./config.json");
 
-//process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 1;
+process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 1;
 client.setMaxListeners(3);
 //process.setMaxListeners(3);
 //require('events').EventEmitter.defaultMaxListeners = Infinity;
