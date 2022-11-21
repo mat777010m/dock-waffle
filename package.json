@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "engines": {
-    "node": "16.13.0"
+    "node": "16.16.0"
   },
   "scripts": {
     "start": "node index.js",
@@ -30,8 +30,10 @@
     "i": "^0.3.7",
     "libsodium-wrappers": "^0.7.9",
     "mongoose": "^6.0.13",
+    "node-gyp": "^9.0.0",
+    "node-pre-gyp": "^0.17.0",
     "nodemon": "^2.0.15",
-    "npm": "^9.1.2",
+    "npm": "8.11.0",
     "request": "^2.88.2",
     "ytdl-core": "^4.10.1"
   }
