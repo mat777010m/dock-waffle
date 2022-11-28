@@ -1,4 +1,4 @@
-const client = require("../index");
+const {client, InteractionType} = require("../index");
 const { Player } = require("discord-player");
 
 const player = new Player(client, {ytdlOptions: {
@@ -12,7 +12,7 @@ player.on("trackStart", (queue, track) => queue.metadata.channel.send(`🎶 | Gr
 client.on("interactionCreate", async (interaction) => {
     if(!interaction.guild) return
     // Slash Command Handling
-    if (interaction.isCommand()) {
+    if (interaction.type === InteractionType.ApplicationCommand) {
         await interaction.deferReply({ ephemeral: false }).catch(() => {});
 
         const cmd = client.slashCommands.get(interaction.commandName);

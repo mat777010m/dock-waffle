@@ -1,4 +1,4 @@
-const { Message, Client,  Permissions: {FLAGS} } = require("discord.js");
+const { Message, Client,  PermissionsBitField } = require("discord.js");
 
 module.exports = {
     name: "serverlist",
@@ -8,8 +8,8 @@ module.exports = {
     guildOnly: false,
     ownerOnly: true,
     usage: "",
-    botPermissions: [FLAGS.ADMINISTRATOR],
-    userPermissions: [FLAGS.MANAGE_MESSAGES],
+    botPermissions: PermissionsBitField.Flags.Administrator,
+    userPermissions: PermissionsBitField.Flags.Administrator,
     
      async function(msg, client, args) {
         client.guilds.cache.forEach(guild => {

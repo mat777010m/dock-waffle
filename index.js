@@ -1,4 +1,4 @@
-const { Client, Collection } = require("discord.js");
+const { Client, Collection, GatewayIntentBits } = require("discord.js");
 require('dotenv').config()
 //const APPLICATION_ID = process.env.APPLICATION_ID 
 const TOKEN = process.env.TOKEN 
@@ -6,7 +6,22 @@ const TOKEN = process.env.TOKEN
 //const GUILD_ID = process.env.GUILD_ID 
 
 const client = new Client({
-    intents: 32767,
+    intents:[
+        GatewayIntentBits.Guilds,
+        GatewayIntentBits.GuildMessages,
+        GatewayIntentBits.GuildPresences,
+        GatewayIntentBits.GuildMessageReactions,
+        GatewayIntentBits.GuildVoiceStates,
+        GatewayIntentBits.DirectMessages,
+        GatewayIntentBits.MessageContent
+    ],
+      presence: {
+        activities: [{
+          name: "test",
+          type: 0
+        }],
+        status: 'dnd'
+      }
 });
 module.exports = client;
 

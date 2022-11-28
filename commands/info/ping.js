@@ -1,4 +1,4 @@
-const { Message, Client,  Permissions: {FLAGS} } = require("discord.js");
+const { Message, Client,  PermissionsBitField } = require("discord.js");
 
 module.exports = {
     name: "ping",
@@ -7,8 +7,8 @@ module.exports = {
     args: false,
     guildOnly: false,
     usage: "",
-    botPermissions: [FLAGS.ADMINISTRATOR],
-    userPermissions: [FLAGS.MANAGE_MESSAGES],
+    botPermissions: PermissionsBitField.Flags.MenageMessages,
+    userPermissions: PermissionsBitField.Flags.MenageMessages,
     /**
      *
      * @param {Client} client
